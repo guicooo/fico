@@ -1,0 +1,159 @@
+$(function(){
+	$('.esqueceu-senha a').click(esqueceuSenha_click);
+	symbol();
+	inicio();
+	$('.disciplina strong, .ensino strong').on('click', function(){
+		$(this).next().slideToggle();
+	});
+	//.trigger('click');
+	
+	$('.efetue-login').click(function(){
+		$('#matricula').focus();
+	});
+});
+
+function symbol(){
+	var symbol = {
+		"34":"8704","36":"8707","216":"172","217":"8896","218":"8897","199":"8898",
+		"200":"8899","180":"10799","182":"8706","196":"8855","197":"8853","184":"247",
+		"213":"8719","229":"8721","214":"8730","39":"8715","206":"8712","207":"8713",
+		"64":"8773","94":"8869","89":"936","189":"10072","163":"8804","179":"8805",
+		"185":"8800","186":"8801","187":"8776","126":"8765","198":"10672","201":"8835",
+		"202":"8839","203":"8836","204":"8834","205":"8838","171":"8596","172":"8592",
+		"173":"8593","174":"8594","175":"8595","219":"8660","220":"8656","87":"937",
+		"221":"8657","222":"8658","223":"8659","97":"945","98":"946","103":"947","100":"948",
+		"101":"949","122":"950","104":"951","113":"952","105":"953","107":"954","108":"955",
+		"109":"956","110":"957","120":"958","111":"959","112":"960","114":"961","115":"963",
+		"116":"964","117":"965","106":"966","99":"967","121":"968","119":"969","178":"34",
+		"92":"8756","96":"175","165":"8734","190":"8212","192":"8501","208":"8736","209":"8711",
+		"65":"913","66":"914","71":"915","68":"916","69":"917","90":"918","72":"919","81":"920",
+		"73":"921","75":"922","76":"923","77":"924","78":"925","88":"926","79":"927","80":"928",
+		"82":"929","83":"931","84":"932","85":"933","74":"934","67":"935"
+	};
+	
+	$('font[face*=Symbol], [style*=symbol], [style*=Symbol]').each(function(idx, obj){
+		var str = $.trim($(obj).html()).replace(/(&.+?;)|(<.+?>)|(.)/gim, function(vl){
+			return (vl.length > 1) ? vl : symbol[vl.charCodeAt()] ? "&#"+ symbol[vl.charCodeAt()] + ";" : vl;
+		});
+		$(obj).html(str);
+	});
+}
+	
+function exibirImagem(imagem,numQuestao) {
+	var containerImg, img;
+	containerImg = document.getElementById('rc_resposta');
+	while (containerImg.childNodes.length > 0 ){
+		containerImg.removeChild(containerImg.firstChild);
+	}
+	img = document.createElement('img');
+	img.setAttribute('src',imagem);
+	img.setAttribute('alt', 'Resolução Comentada - Questão '+ escape(numQuestao))
+	containerImg.appendChild(img);
+}
+
+function esqueceuSenha_click(e){
+	var $ctn = $('.esqueceu-senha'), $html = $ctn.find('a').clone(true), txtMatricula = $.trim($('#matricula').val());
+	
+	var msg = function(m,t){
+		var $m = $(m).fadeTo(0,0); $ctn.html($m.fadeTo("slow", 1));
+		setTimeout(function(){ $ctn.html($html); }, t);
+	};
+	if(txtMatricula != ""){
+		msg('<span class="mutted"><small>Enviando a senha&nbsp;&nbsp;&nbsp;<small><span><img src="/img/layout/loader.gif" />', 10000);
+		
+		$.ajax({
+			data: {"matricula":txtMatricula},
+			url: "/includes/esqueceuSenha.asp",
+			type: "POST",
+			dataType: "json",
+			cache: false,
+			success: function(json){
+				if(json){
+					if(json.valido){
+						msg('<span class="label label-success">'+json.mensagem+'</span>', 3000);
+					} else {
+						msg('<span class="label label-danger">'+json.mensagem+'</span>', 3000);
+					}
+				}
+			},
+			error: function(xml, status){ 
+				msg('<span class="label label-danger">Erro ao conectar no servidor.</span>', 3000);
+			}
+		});
+	} else{
+		msg('<span class="label label-danger">preencha o campo "matrícula" acima para receber a senha.</span>', 3000);
+		$('#matricula').focus().parent().addClass('has-error');
+		setTimeout(function(){ $('#matricula').parent().removeClass('has-error'); }, 3000);
+	}
+}
+
+
+
+/* conteúdo */
+
+
+function inicio(){
+	// eventos
+	$(".exercicioTarefanet").click(mostraExercicio).first().trigger('click');
+	$(".alternativa").click(confereResposta);
+
+	$(".titSugestao").click(mostraAba);
+	$(".titResposta").click(mostraAba);
+	
+	
+	$('font[face*= MT]').css("font-family", "MT Extra");
+}
+function mostraExercicio(e){
+	var $tab = $(this);
+	if(!$tab.hasClass('active')){
+		$("#ex_" + $(".active").removeClass("active").attr("id")).fadeOut(0);
+		$("#ex_"+ $tab.addClass("active").attr("id")).fadeIn();
+	}
+}
+
+function confereResposta(){
+	var $tagt = $(this)
+			.removeClass("correta errada")
+			.siblings()
+			.removeClass("correta errada")
+			.end();
+
+	var $pai  = $tagt.parent();
+	var $resp = $pai.siblings().filter(".titResposta").hide();
+	
+	if($pai.attr("rel") == ""){
+		mensagemAcerto($pai);
+	}
+	else if($pai.attr("rel") == $tagt.attr("rel")){
+		$tagt.addClass("correta").unbind("click").siblings().unbind("click");
+		$resp.fadeTo(0, 0).show().fadeTo("fast", 1).trigger("click");
+		mensagemAcerto($pai, true);
+	}
+	else{
+		$tagt.addClass("errada");
+		mensagemAcerto($pai, false);
+		if($resp.next().hasClass("show"))
+			$resp.next().removeClass("show").slideUp("fast");
+	}
+};
+
+function mostraAba(){
+	var $area = $(this).next();
+	if(!$area.hasClass("show"))
+		$area.addClass("show").fadeIn("slow");
+	else
+		$area.removeClass("show").fadeOut("slow");
+}
+
+function mensagemAcerto($exercicio, acerto){
+	var $msg = $(".msgAcerto", $exercicio).html("").fadeTo(0, 0);
+	if(acerto){
+		$msg.html('<div class="alert alert-success" style="padding:4px;">Alternativa correta!</div>').fadeTo("normal", 1);	
+	}
+	else if(acerto == undefined){
+		$msg.html('<div class="alert alert-default" style="padding:4px;">Resposta bloqueada.</div>').fadeTo("normal", 1);
+	}
+	else{
+		$msg.html('<div class="alert alert-danger" style="padding:4px;">Alternativa incorreta. Tente novamente.</div>').fadeTo("normal", 1);
+	}
+}

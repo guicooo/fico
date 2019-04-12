@@ -1,0 +1,17 @@
+
+<div class="bg-login"></div>
+
+
+<app-navigation *ngIf="router.url != '/aovivo'"></app-navigation>
+
+<router-outlet></router-outlet>
+
+<img class="img-charge" *ngFor="let item of instrumentos" src="./assets/img/icons/instrumentos/{{item.link}}-01.svg">
+<img class="img-charge" *ngFor="let item of listImg" src="./assets/img/icons/{{item.link}}-01.svg">
+<img class="img-charge" *ngFor="let item of imagensDj" [src]="item">
+<img class="img-charge" *ngFor="let item of imagensComp" [src]="item">
+<img class="img-charge" *ngFor="let item of imagensDuets" [src]="item">
+<img class="img-charge" *ngFor="let item of imagensInterprete" [src]="item">
+<img class="img-charge" *ngFor="let item of imagensCover" [src]="item">
+
+

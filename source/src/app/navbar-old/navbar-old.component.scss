@@ -1,0 +1,25 @@
+@import "../../styles/default";
+
+
+.navbar {
+    @include gradiente-black;
+    font-size: 16px;
+    padding: 0px 20%;
+    .increvase {
+        color: $yellow-fico;
+        font-weight: bold;
+    }
+    a {
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+}
+
+.logo-fico {
+    width: 180px;
+    vertical-align: inherit;
+    margin: 0px 30px;
+    min-width: 80px;
+}

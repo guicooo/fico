@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" routerLink="">
+        <img src="assets/img/logo-fico2018.svg" (mouseover)="animateLogo1();animateLogo2();" class="logo-fico" alt="">
+        <img src="assets/img/effect-2.png" alt="" class="effect-logo effect-logo-2">
+        <img src="assets/img/effect-1.png" alt="" class="effect-logo effect-logo-1">
+    </a>
+
+    <!-- collapse button -->
+
+    <a class="bar-father collapsed" data-toggle="collapse" data-target="#navbarfico" aria-controls="navbarfico" aria-expanded="false" aria-label="Toggle navigation"> <!--Open menu-->
+        <p class="bar1"></p>
+        <p class="bar2"></p>
+        <p class="bar3"></p> 
+    </a>
+  
+    <div class="collapse navbar-collapse" id="navbarfico">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="text-nav" routerLink="/">sobre o FICO</a>
+            <hr>
+        </li>              
+        <!-- <li class="nav-item" routerLinkActive="active">
+            <a class="increvase" routerLink="/cadastropremio">concorra a prêmios</a>
+            <hr>
+        </li> -->
+        <li class="nav-item" routerLinkActive="active">
+            <a class="text-nav" routerLink="cadastro-de-bandas">Cadastro de banda</a>
+            <hr>
+        </li>          
+        <li class="nav-item" routerLinkActive="active">
+            <a class="text-nav" routerLink="edicoes">Edições</a>
+            <hr>
+        </li>     
+        <li class="nav-item" routerLinkActive="active">
+            <a class="text-nav" routerLink="midias">mídia <i>kit</i></a>
+            <hr>
+        </li>   
+        <!-- <li class="nav-item" routerLinkActive="active">
+            <a class="text-nav"  routerLink="aovivo">ao vivo</a>
+            <hr>
+        </li>             -->
+        <li class="nav-item sejaaluno" routerLinkActive="active">
+            <a class="text-nav" href="http://queroestudarno.objetivo.br/?page=home" target="_blank">seja aluno</a>
+            <hr>
+        </li>       
+       
+       
+      </ul>               
+      <a class="logo-obj" href="http://www.objetivo.br" target="_blank"><img src="assets/img/logo-objetivo.svg" class="logo-fico" alt=""></a>
+
+    </div>
+  </nav>
+
+
+

@@ -1,0 +1,9 @@
+@import "../../../styles/default";
+
+.form-control:focus {
+    color: white;
+    background-color: transparent;
+}
+.col-form-label {
+    text-align: left;
+}

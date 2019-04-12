@@ -1,0 +1,164 @@
+@import "../../../node_modules/bootstrap/scss/_forms";
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+
+.form-cadastro {
+    color: white;
+    font-size: 3.1vh;
+    text-align: left;
+    @include maxWidth(767) {
+        font-size: 17px;
+    }
+    .form-group {
+        margin-bottom: 1vh;
+    }
+    input {
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 1px solid white;
+        color: white;
+        font-size: 25px;
+        &:focus {
+            border-bottom: 2px solid $yellow-fico;
+        }
+        &.invalid-form-field {
+            border-bottom: 2px solid $red-fico;
+        }
+        @include maxWidth(991) {
+            font-size: 15px;
+        }        
+    }
+
+    label {
+        text-transform: uppercase;
+    }
+
+    .btn-register-container {
+        position: relative;  
+        text-align: right;
+        @include maxWidth(767) {
+            width: 100%;
+            background: $yellow-fico;
+            color: $black;
+            text-align: center;
+        }        
+    }
+
+    .btn-inscrevase {        
+        background-color: transparent;
+        text-transform: uppercase;
+        color: $yellow-fico;
+        font-size: 25px;
+        @include maxWidth(767) {
+            color: $black;
+            font-size: 18px;
+        }
+        &.already {
+            color: $yellow-fico;
+            @include maxWidth(767) {
+                width: 100%;
+            }
+        }
+        svg {
+            position: absolute;
+            margin-left: 30px;
+            width: 30px;
+            top: -2px;
+            @include maxWidth(767) {
+                width: 20px;
+                top: -7px;
+            }
+        }
+    }
+    h2 {
+        text-transform: uppercase;
+        color: $yellow-fico;
+        text-align: center;
+        margin-bottom: 20px;
+        @include maxWidth(767) {
+            margin-bottom: 0;
+            font-size: 22px;
+        }
+    } 
+
+    
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow:0 0 0 50px rgba(0, 0, 0, 0.0) inset; 
+        transition: background-color 90000s ease-in-out 0s;
+        -webkit-text-fill-color: $white;
+        color: $white !important;
+        border-right: none !important;
+        border-top: none !important;
+        border-left: none !important;
+        // border-bottom: 2px solid $black !important;
+    }
+    textarea {
+        padding: 10px;
+        resize: none;
+        width: 100%;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        font-size: 25px;
+        &:focus {
+            border: 2px solid $yellow-fico;
+        }
+        @include maxWidth(991) {
+            font-size: 15px;
+        }  
+
+    }
+    img {
+        width: 100%;
+        max-width: 38vh;
+        @include maxWidth(991) {
+            width: 80%;
+        }  
+    }
+}
+
+.form-confirm {
+    text-transform: uppercase;
+    h2 {
+        color: $yellow-fico;
+        text-align: center;
+        margin-bottom: 1vh;
+    } 
+    .btn {
+        font-size: 25px;
+        border-radius: 0;
+        width: 80%;
+        padding: 10px;
+        text-transform: uppercase;
+            }
+
+}
+.confirmaForm {
+    text-align: left;
+    p {
+        text-transform: uppercase;
+        b {
+            font-weight: normal;
+            color: $yellow-fico;
+        }
+    }
+    span {
+        color: $yellow-fico;
+        font-size: 20px;
+    }
+}
+input.ng-invalid.ng-touched {
+    border-bottom: 1px solid $red-fico !important;
+}
+textarea.ng-invalid.ng-touched {
+    border: 1px solid $red-fico !important;
+}
+
+

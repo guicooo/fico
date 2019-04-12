@@ -1,0 +1,156 @@
+@import "./componentes-boot/_colors";
+@import "./componentes-boot/_variables";
+
+.box-login-pai {
+    height: 100%;
+    position: absolute;
+    width: 96%;
+    @include maxWidth(767) {
+        position: relative;
+        top: 2vh;
+        margin: 0 auto;
+    }
+    .box-chield {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgba(0, 0, 0, 0.75);
+        padding: 30px;
+        margin-top: 40px;
+        @include maxWidth(767) {
+            width: 100%;
+            margin-top: 0px;
+        }
+      
+    }
+  
+}
+
+.loader-wrapper {
+    position: relative;
+
+    .loader-input {
+        display: block;
+    }
+}
+
+.loader-submit-wrapper {
+    position: relative;
+
+    svg {
+        display: none;
+    }
+
+    .loader-input {
+        display: block;
+        right: -25px;
+    }
+}
+
+.loader-input {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid $yellow-fico;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.iconPLus {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid $yellow-fico;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    span{
+        background-color: $yellow-fico;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+    }
+    .plus1 {
+        width: 2px;
+        height: 20px;
+    }
+    .plus2 {
+        width: 20px;
+        height: 2px;
+    }
+    @include maxWidth(991) {
+        width: 25px;
+        height: 25px;
+        .plus1 {
+            height: 15px;
+        }
+        .plus2 {
+            width: 15px; 
+        }  
+    }
+}
+.btn-plus {
+    @include maxWidth(991) {padding-top: 7px;}
+    span{
+        margin-right: 30px;
+        @include maxWidth(991) {margin-right: 10px;}
+    }
+    .iconPLus {
+        top: 5px;
+        margin-left: 0; 
+        left: initial;
+        transform: initial;
+        right: -2px;
+        @include maxWidth(991) {
+            top: 9px;
+            width: 20px;
+            height: 20px;
+            .plus1 {
+                height: 12px;
+            }
+            .plus2 {
+                width: 12px; 
+            }            
+        }
+    }
+}
+
+.text-pdf {
+    font-size: 20px;
+    margin: 0;
+    margin-left: 30px;
+    color: $yellow-fico;
+    text-transform: uppercase;
+    text-align: left;
+    span {
+        color: white;
+    }
+}
+.subtitle  {
+    color: $yellow-fico;
+    text-align: center;
+    font-size: 22px;
+    margin: 0;
+    width: 100%;
+}
+:focus {
+    outline: none;
+}
+
+.col-5-fico{
+    flex: 0 0 20%;
+    max-width: 20%;
+}

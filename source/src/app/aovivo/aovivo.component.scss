@@ -1,0 +1,41 @@
+@import "../../styles/default";
+
+
+.fa-arrow-left {
+    left: 30px;
+    font-size: 40px;
+    color: $color--dark-grey;
+    position: absolute;
+    top: 30px;
+    cursor: pointer;
+    &:hover {
+        color: $yellow-fico;
+    }
+}
+
+.views {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 25px;
+    color: white;
+    .fa-eye {
+
+    }
+}
+
+.modal-header .close {
+    margin: -1rem -1rem -1rem 0;
+}
+
+.btn-submit-modal {
+    color: black;
+    background-color: $yellow-fico;
+    border-color: $yellow-fico;
+    font-weight: bold;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+
+}

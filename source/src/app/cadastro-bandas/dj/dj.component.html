@@ -1,0 +1,111 @@
+<div class="row align-items-center justify-content-md-center box-login-pai">
+  <div class="col-12" style="padding-left: 5%;">
+      <div class="box-chield text-center form-cadastro">
+          <h2 *ngIf="currentPage != 3">Ficha de inscrição – dj</h2>
+          <h2 *ngIf="currentPage == 3">confirmação de cadastro – dj</h2>
+          <div class="row">
+              <div [ngClass]="{'col-md-4': !appService.isMobile, 'col-12': appService.isMobile}">
+                  <img src="./assets/img/icons/dj-01.svg" alt="">
+              </div>
+
+              <!-- PART 1 -->
+              <form *ngIf="currentPage == 1"  [formGroup]="aluno" (ngSubmit)="enviarAluno()" [ngClass]="{'col-md-8': !appService.isMobile, 'col-12': appService.isMobile}">
+                    <div class="form-group row">
+                        <label for="nome" class="col-sm-2 col-form-label">nome: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nome" autocomplete="off" formControlName="nome">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="unidade" class="col-sm-2 col-form-label">unidade: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="unidade" formControlName="unidade">
+                        </div>
+                        <label for="turma" class="col-sm-2 col-form-label">turma: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="turma" formControlName="turma">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="e-mail" class="col-sm-2 col-form-label">e-mail: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="e-mail" formControlName="email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="rg" class="col-sm-2 col-form-label">rg: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control rg" id="rg" formControlName="rg">
+                        </div>
+                        <label for="telefone" class="col-sm-2 col-form-label">telefone: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control telefone" id="telefone"  formControlName="telefone">
+                        </div>
+                    </div>
+
+            </form>
+
+              <!-- PART 2 -->
+            <form *ngIf="currentPage == 2" [formGroup]="resumo" (ngSubmit)="enviarResumo()" [ngClass]="{'col-md-8': !appService.isMobile, 'col-12': appService.isMobile}">
+                <div class="form-group row">
+                    <label for="nome" class="col-sm-12 col-form-label">Resumo Histórico para a apresentação: </label>
+                    <div class="col-sm-12">
+                        <textarea rows="5" formControlName="resumo"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label for="nome" class="col-sm-4 col-form-label">Estilo musical: </label>
+                  <div class="col-sm-8">
+                      <input type="text" class="form-control" id="nome" autocomplete="off" formControlName="estilo">
+                  </div>
+                </div>                
+            </form> 
+
+              <!-- PART 3 -->
+              <div class="confirmaForm" *ngIf="currentPage == 3" [ngClass]="{'col-md-8': !appService.isMobile, 'col-12': appService.isMobile}">
+                <div class="row">
+                  <div class="col-md-12">
+                      <p><b>Nome do aluno:</b> {{arrayAluno[0].nome}}</p>
+                  </div>
+                  <div class="col-md-6">
+                      <p><b>unidade:</b> {{arrayAluno[0].unidade}}</p>
+                  </div>
+                  <div class="col-md-6">
+                      <p><b>turma:</b> {{arrayAluno[0].turma}}</p>
+                  </div>    
+                  <div class="col-md-12">
+                      <p><b>e-mail:</b> {{arrayAluno[0].email}}</p>
+                  </div> 
+                  <div class="col-md-6">
+                      <p><b>rg:</b> {{arrayAluno[0].rg}}</p>
+                  </div>
+                  <div class="col-md-6">
+                      <p><b>telefone:</b> {{arrayAluno[0].telefone}}</p>
+                  </div>  
+                  <div class="col-md-12">
+                      <p><b>estilo musical:</b> {{arrayResumo[0].estilo}}</p>
+                  </div>    
+                  <div class="col-md-12">
+                      <span>Obs: na data da seleção, trazer seu equipamento (CDJ ou controladora)</span>
+                  </div>                                                                                  
+                </div>
+
+   
+              </div>            
+              
+
+          </div>
+
+          <div class="row" style="margin-top:20px;">
+              <div class="col-12">
+                  <button (click)="back()"  class="btn btn-cadastro pull-left"><i class="fas fa-caret-left"></i>voltar</button>
+                  <button (click)="next()" *ngIf="currentPage != 3"  class="btn btn-cadastro pull-right">próximo<i class="fas fa-caret-right"></i></button>
+                  <button *ngIf="currentPage == 3" routerLink="/cadastro-de-bandas/cadastro-concluido" class="btn btn-cadastro pull-right">finalizar<i class="fas fa-caret-right"></i></button>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>

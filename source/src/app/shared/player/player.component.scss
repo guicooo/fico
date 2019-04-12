@@ -1,0 +1,47 @@
+
+@import "../../../styles/default";
+@import "../../../styles/componentes-boot/dragdocument.scss";
+
+#audioplayer{
+	width: 480px;
+	height: 60px;
+	margin: auto;
+    background-color: transparent;
+    &.disabled{
+        opacity: .3;
+	}
+	@include maxWidth(991) {
+		width: 100%;
+	}  
+}
+
+#pButton{
+    cursor: pointer;
+    float:left;
+    padding: 10px 15px 0px 0px;
+    color: $yellow-fico;
+    &:hover {
+        color: rgba(248, 202, 17, 0.8);
+    }
+
+}
+
+#timeline{
+	width: 400px;
+	height: 7px;
+	margin-top: 20px;
+	float: left;
+	border-radius: 15px;
+	background: rgba(248, 202, 17, 0.2);
+	@include maxWidth(991) {
+		width: 85%;
+	} 
+}
+#playhead{
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	margin-top: -5px;
+	background: $yellow-fico;
+
+}

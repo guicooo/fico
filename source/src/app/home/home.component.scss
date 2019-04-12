@@ -1,0 +1,76 @@
+@import "../../styles/default";
+
+.cont-home {
+    text-transform: uppercase;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    h4 {
+        color: $yellow-fico;
+        font-size: 36px;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+    h5 {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 30px;
+        font-weight: 400;
+    }
+    button {
+        text-transform: uppercase;
+        border-radius: 0;
+        border: 3px solid $yellow-fico;
+        padding: 10px;
+        font-size: 20px; 
+        width: 420px;
+        font-weight: bold;
+        background-color: $yellow-fico;
+        color: black;
+        &:hover {
+        color: $yellow-fico;
+                background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        @include maxWidth(767) {
+            width: 290px;
+        }
+    }
+}
+
+.btn-animated {
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+  
+.btn-animated span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    color: $black;
+    transition: 0.5s;
+}
+  
+.btn-animated span:after {
+    content: '\00bb';    
+    color: $yellow-fico;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.btn-animated:hover span {
+    padding-right: 25px;
+    color: $yellow-fico;
+}
+  
+.btn-animated:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+

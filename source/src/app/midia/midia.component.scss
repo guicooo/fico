@@ -1,0 +1,61 @@
+@import "../../styles/default";
+
+
+
+.midia {
+    position: relative;
+    margin-top: 28vh;
+    text-align: center;
+    padding: 0px 20px;
+    @media #{$mobile}{margin-top: 15vh;}
+    video {
+        width: 50%;
+        height: auto;
+        @media #{$mobile}{
+            width: 100%;
+        }
+    }
+}
+.mask-black {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .4;
+  }
+  button {
+    text-transform: uppercase;
+    border-radius: 0;
+    border: 3px solid $yellow-fico;
+    padding: 10px;
+    font-size: 20px; 
+    width: 50%;
+    font-weight: bold;
+    background-color: $yellow-fico;
+    color: black;
+    &:hover {
+    color: $yellow-fico;
+            background-color: rgba(0, 0, 0, 0.6);
+    }
+    @media #{$mobile}{
+        width: 100%;
+        font-size: 1.8vh;
+    }
+
+ 
+}
+
+.btn-animated span {
+    color: black;
+}
+  
+.btn-animated span:after { 
+    color: $yellow-fico;
+}
+
+.btn-animated:hover span {
+    padding-right: 25px;
+    color: $yellow-fico;
+}

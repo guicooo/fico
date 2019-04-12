@@ -1,0 +1,36 @@
+<div class="row align-items-center justify-content-md-center box-login-pai">
+	<div class="col-12" style="padding-left: 5%;">
+		<div class="box-chield text-center form-cadastro">
+			<h2>escolha sua categoria</h2>
+			<div class="row">
+				<div class="select-category" routerLink="dj" [ngClass]="{'col': !appService.isMobile, 'col-12': appService.isMobile}">
+					<img [src]="imagensDj[imagemDj]" alt="" class="pngSequenceDj">
+					<h5>DJ</h5>
+				</div>
+				<div class="col select-category" routerLink="duets" [ngClass]="{'col': !appService.isMobile, 'col-12': appService.isMobile}">
+					<img [src]="imagensDuets[imagemDuets]" alt="" class="pngSequenceDuets" style="position: relative;top: 40px;margin-bottom: 20px;">
+					<h5>Duets</h5>
+					
+				</div>	
+				<div class="col select-category" routerLink="interprete" [ngClass]="{'col': !appService.isMobile, 'col-12': appService.isMobile}">
+					<img [src]="imagensInterprete[imagemInterprete]" alt="" class="pngSequenceInterprete" style="margin-bottom: 0;">
+					<h5>Intérprete</h5>
+					
+				</div>							
+				<div class="col select-category" routerLink="composicao-inedita" [ngClass]="{'col': !appService.isMobile, 'col-12': appService.isMobile}">
+					<img [src]="imagensComp[imagemComp]" alt="" class="pngSequenceComp">
+					<h5>Composição Inédita</h5>
+					
+				</div>				
+				<div class="col select-category" routerLink="cover" [ngClass]="{'col': !appService.isMobile, 'col-12': appService.isMobile}">
+					<img [src]="imagensCover[imagemCover]" alt="" class="pngSequenceCover">
+					<h5>Cover</h5>
+					
+				</div>				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

@@ -1,0 +1,32 @@
+@import "../../../styles/default";
+@import "../../../styles/componentes-boot/dragdocument.scss";
+
+.form-control:focus {
+    color: white;
+    background-color: transparent;
+}
+.col-form-label {
+    text-align: left;
+}
+.addMember {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid $yellow-fico;
+    height: 40px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    p {
+        text-transform: uppercase;
+        text-align: left;
+    }
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.445);
+        border: 2px solid $yellow-fico;
+    }
+}
+.formDuets {
+    font-size: 22px;
+    @include maxWidth(991){
+        font-size: 17px;
+    }
+}

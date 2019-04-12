@@ -1,0 +1,33 @@
+@import "../../styles/default";
+
+
+
+.duvidas {
+    background-color: rgba(0, 0, 0, 0.60);
+    position: relative;
+    margin-top: 40vh;
+    text-align: center;
+    color: $yellow-fico;
+    text-transform: uppercase;
+    padding: 50px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    .title {
+        a {
+            transition: all 0.5s;
+            color: white;
+            &:hover {
+                color: darken(white, 15%);
+            }
+        }
+        h1 {
+            font-size: 8vh;
+            color: white;
+            
+        }
+        h2 {
+            font-size: 5vh;
+        }        
+    }
+}

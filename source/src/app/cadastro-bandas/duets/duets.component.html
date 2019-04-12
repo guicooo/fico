@@ -1,0 +1,167 @@
+<div class="row align-items-center justify-content-md-center box-login-pai">
+    <div class="col-12" style="padding-left: 5%;">
+        <div class="box-chield text-center form-cadastro">
+            <h2 *ngIf="currentPage != 3">Ficha de inscrição – duets</h2>
+            <h2 *ngIf="currentPage == 3">confirmação de cadastro – duets</h2>
+            <div class="row">
+                <div *ngIf="currentPage != 5" [ngClass]="{'col-md-4': !appService.isMobile, 'col-12': appService.isMobile}">
+                    <img src="./assets/img/icons/duets-01.svg" alt="">
+                </div>
+
+
+                <!-- PART 0 -->
+                <form  *ngIf="currentPage == 0" [formGroup]="integrantes" (ngSubmit)="enviarIntegrantes()" [ngClass]="{'col-md-8': !appService.isMobile, 'col-12': appService.isMobile}">
+                    <div class="form-group row">
+                        <label for="musica" class="col-sm-4 col-form-label">nome da música: </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="musica" autocomplete="off" formControlName="musica">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="artista" class="col-sm-2 col-form-label">artista: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="artista" autocomplete="off" formControlName="artista">
+                        </div>
+                    </div>  
+                    
+
+                    <div class="row">
+                        <label class="col-sm-12 col-form-label">integrantes</label>
+                        <div class="col-sm-12" *ngFor="let item of arrayIntegrante">
+                            <div class="addMember" style="padding-left: 10px;" (click)="editIntegrante(item)">
+                                <p class="max-lines-1">Nome: {{item.nome}}</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12" *ngIf="arrayIntegrante.length < 2">
+                            <button class="addMember" (click)="newIntegrante()">
+                              <i class="iconPLus"><span class="plus1"></span><span class="plus2"></span></i>
+                            </button>
+                        </div>
+                    </div>                                     
+                    
+                </form>  
+                
+                
+                <!-- PART 1 -->
+                <form *ngIf="currentPage == 1" [formGroup]="integrante" (ngSubmit)="enviarIntegrante()" [ngClass]="{'col-md-8': !appService.isMobile, 'col-12': appService.isMobile}">
+                    <div class="form-group row">
+                        <label for="nome" class="col-sm-2 col-form-label">nome: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nome" autocomplete="off"  formControlName="nome">
+                        </div>
+                    </div>
+  
+                    <div class="form-group row">
+                        <label for="unidade" class="col-sm-2 col-form-label">unidade: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="unidade"  formControlName="unidade">
+                        </div>
+                        <label for="turma" class="col-sm-2 col-form-label">turma: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="turma"  formControlName="turma">
+                        </div>
+                    </div>
+  
+                    <div class="form-group row">
+                        <label for="e-mail" class="col-sm-2 col-form-label">e-mail: </label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="e-mail"  formControlName="email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="rg" class="col-sm-2 col-form-label">rg: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control rg" id="rg"  formControlName="rg">
+                        </div>
+                        <label for="telefone" class="col-sm-2 col-form-label">telefone: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control telefone" id="telefone"  formControlName="telefone">
+                        </div>
+                    </div>
+  
+                </form>
+  
+                <!-- PART 2 -->
+                <form [ngClass]="{'col-md-8': !appService.isMobile, 'col-12': appService.isMobile}" *ngIf="currentPage == 2" [formGroup]="resumo" (ngSubmit)="enviarResumo()">
+                    <div class="form-group row">
+                        <label for="nome" class="col-sm-12 col-form-label">Resumo Histórico para a apresentação: </label>
+                        <div class="col-sm-12">
+                            <textarea rows="5" formControlName="resumo"></textarea>
+                        </div>
+                    </div>
+                </form>    
+                
+                <!-- PART 3 -->
+                <div [ngClass]="{'col-md-8': !appService.isMobile, 'col-12': appService.isMobile}" *ngIf="currentPage == 3">
+                    <div class="row turn">
+                      <h6 class="subtitle">Anexe a cópia da letra da música</h6>
+                        <div class="col-md-12 text-center input-import ">
+                            <div class="form-group show-desktop show-chrome">
+                                <label class="sr-only" for="inputFile"></label>
+                                <input  type="file" 
+                                        class="form-control-file font-weight-bold" 
+                                        id="inputFile" accept="pdf/*" 
+                                        #inputFile (change)="readPdf($event)" 
+                                        data-title="Arraste e solte seu arquivo (.PDF) aqui para enviá-lo ou">
+                            </div>
+                            <i class="fas fa-cloud-upload-alt animasim show-desktop show-chrome"></i>
+                            <button type="button" class="btn btn-import" (click)="clickInput()"><b>Pressione para selecionar</b></button>
+                        </div>
+                        <div class="col-md-12"  *ngFor="let item of arrayPdf">
+                          <p class="text-pdf">nome do arquivo: <span class="max-lines-1">{{item.Name}}</span></p>
+                        </div>
+                    </div>
+                </div>     
+                
+                <!-- PART 4 -->
+                <div [ngClass]="{'col-md-8': !appService.isMobile, 'col-12': appService.isMobile}" *ngIf="currentPage == 4">
+                    <h6 class="subtitle">Anexe a base gravada</h6>
+                    <app-player></app-player>
+                </div>                  
+  
+                <!-- PART 5 -->
+                <div class="row" *ngIf="currentPage == 5">
+                    <div class="confirmaForm formDuets" *ngFor="let item of arrayIntegrantes[0].integrantes" [ngClass]="{'col-md-6': !appService.isMobile, 'col-12': appService.isMobile}">
+                        <div class="col-md-12">
+                            <p><b>Nome do aluno:</b> {{item.nome}}</p>
+                        </div>
+                        <div class="col-md-12">
+                            <p><b>unidade:</b> {{item.unidade}}</p>
+                        </div>
+                        <div class="col-md-12">
+                            <p><b>turma:</b> {{item.turma}}</p>
+                        </div>    
+                        <div class="col-md-12">
+                            <p><b>e-mail:</b> {{item.email}}</p>
+                        </div> 
+                        <div class="row" style="padding: 0px 15px;">
+                            <div class="col-md-5">
+                                <p><b>rg:</b> {{item.rg}}</p>
+                            </div>
+                            <div class="col-md-7">
+                                <p><b>telefone:</b> {{item.telefone}}</p>
+                            </div> 
+                        </div>
+
+                    </div>  
+                </div>
+   
+            </div>
+  
+            <div class="row" style="margin-top:20px;">
+                <div class="col-12">
+                    <button (click)="back()" class="btn btn-cadastro pull-left"><i class="fas fa-caret-left"></i>voltar</button>
+
+                    <button (click)="next()" *ngIf="currentPage != 5 && currentPage != 1  && currentPage != 0 && currentPage != 3"  class="btn btn-cadastro pull-right">próximo<i class="fas fa-caret-right"></i></button>
+                    <button [disabled]="arrayIntegrante.length < 2" (click)="next()" *ngIf="currentPage == 0"  class="btn btn-cadastro pull-right">próximo<i class="fas fa-caret-right"></i></button>
+                    <button [disabled]="this.arrayPdf.length < 1" (click)="currentPage = currentPage + 1" *ngIf="currentPage == 3"  class="btn btn-cadastro pull-right">próximo<i class="fas fa-caret-right"></i></button>
+                    
+                    <button *ngIf="currentPage == 5" routerLink="/cadastro-de-bandas/cadastro-concluido" class="btn btn-cadastro pull-right">finalizar<i class="fas fa-caret-right"></i></button>
+                    <button *ngIf="currentPage == 1 && editUser == false" (click)="enviarIntegrante()"  class="btn btn-cadastro btn-plus pull-right"><span>add integrante</span><i class="iconPLus"><span class="plus1"></span><span class="plus2"></span></i></button>
+                    <button *ngIf="currentPage == 1 && editUser == true" (click)="editarIntegrante()"  class="btn btn-cadastro btn-plus pull-right"><span>editar integrante</span><i class="iconPLus"><span class="plus1"></span><span class="plus2"></span></i></button>
+                </div>
+            </div>
+  
+        </div>
+    </div>
+  </div>

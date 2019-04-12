@@ -1,0 +1,45 @@
+@import "../../styles/default";
+
+
+
+
+.modal {
+    .loader-input {
+        display: block;
+    }
+}
+
+
+.modal-input {
+    color: black;
+
+    &.invalid-form-field {
+        border: 2px solid $red-fico;
+    }
+}
+
+.modal-header .close {
+    margin: -1rem -1rem -1rem 0;
+}
+
+.btn-submit-modal {
+    color: black;
+    background-color: $yellow-fico;
+    border-color: $yellow-fico;
+    font-weight: bold;
+}
+.cadastro-sucess {
+    font-size: 25px;
+    text-transform: uppercase;
+    padding:40px 0px;
+    h1 {
+        margin-bottom: 30px;
+        color: $yellow-fico;
+    }
+    p {
+        color: white;
+        span {
+            color: $yellow-fico;
+        }
+    }
+}

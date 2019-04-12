@@ -1,0 +1,138 @@
+<div class="row align-items-center justify-content-md-center box-login-pai">
+	<div class="col-12" style="padding-left: 5%;">
+		<div class="box-chield text-center">
+			<iframe src="https://www.objetivo.br/fico/cadastro" frameborder="0"></iframe>
+			<!-- <iframe src="http://200.174.103.116/fico/Cadastro" frameborder="0"></iframe> -->
+			<!-- <form class="form-cadastro" *ngIf="cadastro" [formGroup]="formSubscription" (ngSubmit)="onSubmit()">
+				<div class="form-group row">
+					<label for="celular" class="col-sm-2 col-form-label">telefone: </label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="celular" formControlName="Celular" [(ngModel)]="telefone"
+					[ngClass]="{'invalid-form-field': !formSubscription.controls['Celular'].valid && formSubscription.controls['Celular'].touched}">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="cpf" class="col-sm-1 col-form-label">cpf: </label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" id="cpf" id="cpf" formControlName="Cpf" [(ngModel)]="cpf" #cpfString (blur)="cpfBlur(cpfString.value)"
+						[ngClass]="{'invalid-form-field': !formSubscription.controls['Cpf'].valid && formSubscription.controls['Cpf'].touched}">
+					</div>
+					<label for="rg" class="col-sm-1 col-form-label">rg: </label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" id="rg"  formControlName="Rg" [(ngModel)]="rg"
+						[ngClass]="{'invalid-form-field': !formSubscription.controls['Rg'].valid && formSubscription.controls['Rg'].touched}">
+					</div>					
+				</div>	
+				
+				<div class="form-group row">
+					<label for="mail" class="col-sm-2 col-form-label"><i>e-mail</i>: </label>
+					<div class="col-sm-10">
+					<input type="mail" class="form-control" id="mail" formControlName="Email" [(ngModel)]="email"
+					[ngClass]="{'invalid-form-field': !formSubscription.controls['Email'].valid && formSubscription.controls['Email'].touched}">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="promove" class="col-sm-12 col-form-label">qual colégio promove o fico, o maior e mais tradicional festival de música estudantil? </label>
+					<div class="col-sm-12" style="margin-top: 40px;">
+						<input type="text" class="form-control" id="promove" style="position: absolute;bottom: 0; left: 0;"
+						formControlName="Resposta" [(ngModel)]="resposta"
+						[ngClass]="{'invalid-form-field': !formSubscription.controls['Resposta'].valid && formSubscription.controls['Resposta'].touched}">
+					</div>
+				</div>		
+				
+				<div class="form-group row" style="margin-top: 30px;">
+					<div class="col-sm-8" style="padding-top: 0.375rem;">
+						<label class="control control--checkbox rules-label">li e estou de acordo com as <a (click)="openModalRules()">regras estabelecidas.</a>
+
+						<input type="checkbox" (click)="checkBoxData()"/>
+						<div class="control__indicator"></div>
+						</label>
+					</div>
+					<div class="col-sm-4">
+						<button type="submit" class="btn btn-inscrevase" (mouseover)="effectPlay()" [ngClass]="{'loader-submit-wrapper': loadingSubmit }">Inscreva-se
+							<svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" baseProfile="tiny" id="Layer_1" x="0px" y="0px" width="45.9px" height="57px" viewBox="0 0 45.9 57" xml:space="preserve">
+								<path fill="#F8CA11" d="M0.7,28.5c0-7.9,0-15.7,0-23.6c0-1.6-0.3-3.4,1.6-4.2c1.7-0.8,3.1,0,4.5,1C18.5,9.3,30.3,16.8,42,24.4  c4.6,3,4.6,5.3-0.1,8.3C30.2,40.3,18.5,47.9,6.7,55.5c-1.4,0.9-2.7,1.8-4.5,0.9c-1.6-0.9-1.5-2.5-1.5-4C0.7,44.4,0.7,36.5,0.7,28.5z  "/>
+							</svg>
+							<div class="loader-input"></div>
+						</button>					
+					</div>					
+				</div>				
+				
+			</form> -->
+
+			<!-- <div class="form-cadastro form-confirm" *ngIf="!cadastro && !cadastroOk">
+				<h2>confirmação de cadastro</h2>
+				<p>nome: {{ nome }}</p>
+				<p>rg: {{ rg }}</p>
+				<p>cpf: {{ cpf }}</p>
+				<p><i>e-mail</i>: {{ email }}</p>
+				<p>telefone: {{ telefone }}</p>
+				<div class="row" style="text-align: center;">
+					<div class="col">
+						<button class="btn btn-red" (click)="cadastro = !cadastro;maskFields()">alterar</button>
+					</div>
+					<div class="col">
+						<button class="btn btn-confirm margin-mobile" (click)="confirmRegister()">confirmar</button>
+					</div>					
+				</div>
+			</div> -->
+
+			<!-- <div class="cadastro-sucess"  *ngIf="cadastroOk">
+					<h1>Cadastro realizado!</h1>
+					<p>Acompanhe os sorteios de diversos prêmios no dia do evento.<br> <span>Boa sorte!</span></p>
+			</div> -->
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+ <!-- <div id="myModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">{{ modalTitle }}</h4>
+			</div>
+			<div class="modal-body">
+				<p>{{ modalText }}</p>
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-submit-modal" data-dismiss="modal">Entendi</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="at-modal" data-modal="modal-1">
+	<span class="at-modal__button" data-modal-action="close" (click)="closeModal()">×</span>
+	<span class="title-modal">REGULAMENTO DE PREMIAÇÃO FICO 2018 – COLÉGIO OBJETIVO</span>
+	<section class="at-modal__section">
+		<p>Este regulamento estabelece os termos para participação na premiação durante o Evento FICO – Festival Interno do Colégio Objetivo, que será realizado no dia 02/09/2018, no Espaço das Américas.</p>
+		<p>Os prêmios são: 2 bicicletas Houston, 2 relógios Everlest, 1 violão Tagima acústico, 1 microfone para celular IOS, 1 microfone para computador, 10 kits Rednose, 10 kits  Nicoboco.</p>
+		<p>O sorteio acontecerá durante o horário da realização do evento FICO 2018.</p> 
+		<p>A participação na premiação se dará nos termos do presente regulamento.</p>
+		<p><strong>Quem participa?</strong><br />
+		Todos os alunos e seus respectivos convidados que receberam o ingresso do FICO 2018, se inscreveram no <a href="http://www.objetivo.br/fico">www.objetivo.br/fico</a> e responderam à seguinte pergunta: “Qual Colégio é o organizador do FICO 2018?”. Resposta: Colégio Objetivo.</p>
+		<p>A inscrição no site deve ser completa, com o preenchimento de 100% das informações, e dados reais. Funcionários e respectivos familiares de todas as empresas agregadas ao Grupo UNIP e Objetivo NÃO poderão participar.</p>
+		<p><strong>Como participar?</strong><br/>
+		Ao preencher os dados no site <a href="http://www.objetivo.br/fico">www.objetivo.br/fico</a>, a inscrição será confirmada com o envio de uma mensagem de SMS e e-mail. Guarde essa mensagem. Todos os sorteios serão realizados no palco principal, pelo apresentador do evento, e todos poderão visualizar o sistema que fará o sorteio. A pessoa sorteada deverá comparecer ao lado do palco e procurar a produção do evento em até 05 (cinco) minutos após o locutor anunciar seu nome completo. Caso o sorteado não compareça nesse prazo, será realizado outro sorteio, excluindo o primeiro sorteado e, assim, sucessivamente. </p>
+		<p>IMPORTANTE: A apresentação de documento oficial com foto é imprescindível para o sorteado retirar o prêmio. Somente o próprio sorteado poderá retirar o prêmio. O prêmio não poderá ser retirado por terceiros, mesmo com apresentação de documento oficial do sorteado. Caso alguma informação preenchida no site <a href="http://www.objetivo.br/fico">www.objetivo.br/fico</a> esteja errada, o sorteado será não poderá retirar o referido prêmio.</p>
+		<p><strong>Ordem de sorteio</strong><br />
+		A organização do evento se permite estabelecer seus critérios de ordem dos prêmios a serem sorteados sem aviso prévio, assim como a mudança de prêmios que serão sorteados e, também, a alteração do horário da realização dos referidos sorteios.</p>
+		<p><strong>Condições Gerais</strong><br />
+		 O sorteio tem caráter meramente comemorativo, não gerando qualquer tipo de direito aos convidados, exceto o de participar nos termos e condições previstos neste regulamento.</p>
+		<p>Quaisquer dúvidas, questionamentos ou reclamações referentes ao sorteio serão respondidos ou decididos pela Diretoria e Organização do Evento FICO 2018, soberanamente.</p>
+		<p>Grupo Educacional Objetivo – FICO 2018</p>
+		<p><a href="tel:08007700189">0800 77 00 189</a></p>
+	</section>
+</div>
+  
+<div class="overlay" (click)="closeModal()"></div> -->

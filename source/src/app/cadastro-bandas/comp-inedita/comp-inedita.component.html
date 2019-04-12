@@ -1,0 +1,199 @@
+<div class="row align-items-center justify-content-md-center box-login-pai">
+    <div class="col-12" style="padding-left: 5%;">
+        <div class="box-chield text-center form-cadastro">
+            <h2 *ngIf="currentPage != 3 && currentPage != 4">Ficha de inscrição – composição inédita</h2>
+            <h2 *ngIf="currentPage == 3">integrantes – composição inédita</h2>
+            <h2 *ngIf="currentPage == 4">novo integrante</h2>
+            <div class="row">
+                <div class="col-md-4" *ngIf="currentPage != 3 && currentPage != 4">
+                    <img src="./assets/img/icons/composicao-01.svg" alt="">
+                </div>
+
+                <!-- PART 1 -->
+                <form class="col-md-8" *ngIf="currentPage == 1"  [formGroup]="aluno" (ngSubmit)="enviarAluno()">
+                    <div class="form-group row">
+                        <label for="nome" class="col-sm-2 col-form-label">nome: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nome" autocomplete="off" formControlName="nome">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="unidade" class="col-sm-2 col-form-label">unidade: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="unidade" formControlName="unidade">
+                        </div>
+                        <label for="turma" class="col-sm-2 col-form-label">turma: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="turma" formControlName="turma">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="e-mail" class="col-sm-2 col-form-label">e-mail: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="e-mail" formControlName="email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="rg" class="col-sm-2 col-form-label">rg: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control rg" id="rg" formControlName="rg">
+                        </div>
+                        <label for="telefone" class="col-sm-2 col-form-label">telefone: </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control telefone" id="telefone"  formControlName="telefone">
+                        </div>
+                    </div>
+
+                </form>
+
+                <!-- PART 2 -->
+                <form class="col-md-8" *ngIf="currentPage == 2" style="padding-top: 70px;"  [formGroup]="musica" (ngSubmit)="enviarMusica()">
+                    <div class="form-group row">
+                        <label for="musica" class="col-sm-4 col-form-label">nome da música: </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="musica" autocomplete="off" formControlName="nome">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="artista" class="col-sm-2 col-form-label">artista: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="artista" autocomplete="off" formControlName="artista">
+                        </div>
+                    </div>  
+                </form>     
+
+                <!-- PART 3 -->
+                <div class="col-md-12" *ngIf="currentPage == 3">
+                    <div class="row">
+                        <div *ngFor="let item of arrayBand; let i = index" class="col-md-2 select-category" [ngClass]="{'col-5-fico': !_appService.isMobile, 'col-sm-6 col-12': _appService.isMobile}">
+                            <div class="cont-band" *ngIf="item.actived == false" (click)="addIntegrante(i)">
+                                <i class="iconPLus"><span class="plus1"></span><span class="plus2"></span></i>
+                            </div>
+                            <div class="cont-instrumentos" *ngIf="item.actived == true" (click)="editIntegrante(item)">
+                                <div *ngIf="item.instrumentos.length == 1">
+                                    <img *ngFor="let item2 of item.instrumentos" src="./assets/img/icons/instrumentos/{{item2}}-01.svg">
+                                </div>                            
+                                <div *ngIf="item.instrumentos.length >= 2">
+                                    <img *ngFor="let item2 of item.instrumentos" [ngClass]="{'vocal-min': item2 == 'vocal'}" src="./assets/img/icons/instrumentos/{{item2}}-01.svg">
+                                </div>
+                                
+                                <h6 class="max-lines-1" style="color: #F8CA11">{{item.nome}}</h6>
+                            </div>                        
+                        </div>
+
+                    </div>
+            
+                </div>  
+
+                <!-- PART 4 -->
+                <div class="col-md-12" *ngIf="currentPage == 4">
+                    <form  [formGroup]="integrante" (ngSubmit)="enviarIntegrante()">
+                        <div class="form-group row">
+                            <label for="nome" class="col-sm-1 col-form-label">Nome: </label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="nome" autocomplete="off"  formControlName="nome">
+                            </div>
+                            <label for="rg" class="col-sm-1 col-form-label">rg: </label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control rg" id="rg" autocomplete="off"  formControlName="rg">
+                            </div>                            
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-md-3 cont-instrumentos" *ngFor="let item of instrumentos" [ngClass]="{'actived': item.actived}" (click)="getInstrumento(item)">
+                            <img src="./assets/img/icons/instrumentos/{{item.link}}-01.svg">
+                            <h6>{{item.nome}}</h6>
+                        </div>
+                    </div>            
+                
+                </div>              
+
+
+
+                <!-- PART 5 -->
+                <form class="col-md-8" *ngIf="currentPage == 5" [formGroup]="resumo" (ngSubmit)="enviarResumo()">
+                    <div class="form-group row">
+                        <label for="nome" class="col-sm-12 col-form-label">Resumo Histórico para a apresentação: </label>
+                        <div class="col-sm-12">
+                            <textarea rows="5" formControlName="resumo"></textarea>
+                        </div>
+                    </div>
+                </form>     
+                
+                <!-- PART 6 -->
+                <div class="col-md-8" *ngIf="currentPage == 6">
+                    <div class="row turn">
+                      <h6 class="subtitle">Anexe a cópia da letra da música</h6>
+                        <div class="col-md-12 text-center input-import ">
+                            <div class="form-group show-desktop show-chrome">
+                                <label class="sr-only" for="inputFile"></label>
+                                <input  type="file" 
+                                        class="form-control-file font-weight-bold" 
+                                        id="inputFile" accept="pdf/*" 
+                                        #inputFile (change)="readPdf($event)" 
+                                        data-title="Arraste e solte seu arquivo (.PDF) aqui para enviá-lo ou">
+                            </div>
+                            <i class="fas fa-cloud-upload-alt animasim show-desktop show-chrome"></i>
+                            <button type="button" class="btn btn-import" (click)="clickInput()"><b>Pressione para selecionar</b></button>
+                        </div>
+                        <div class="col-md-12"  *ngFor="let item of arrayPdf">
+                          <p class="text-pdf">nome do arquivo: <span class="max-lines-1">{{item.Name}}</span></p>
+                        </div>
+                    </div>
+                </div>     
+                
+                <!-- PART 7 -->
+                <div class="col-md-8" *ngIf="currentPage == 7">
+                    <h6 class="subtitle">Anexe a música gravada pela banda</h6>
+                    <app-player></app-player>
+                </div>                 
+
+                <!-- PART 8 -->
+                <div class="col-md-8 confirmaForm" *ngIf="currentPage == 8">
+                    <div class="row"  *ngFor="let item of arrayAluno">
+                        <div class="col-md-12">
+                            <p><b>Nome do aluno:</b> {{item.nome}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><b>unidade:</b> {{item.unidade}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><b>turma:</b> {{item.turma}}</p>
+                        </div>    
+                        <div class="col-md-12">
+                            <p><b>e-mail:</b> {{item.email}}</p>
+                        </div> 
+                        <div class="col-md-6">
+                            <p><b>rg:</b> {{item.rg}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><b>telefone:</b> {{item.telefone}}</p>
+                        </div>  
+                    </div>
+
+    
+                </div>            
+                
+
+            </div>
+
+            <div class="row" style="margin-top:20px;">
+                <div class="col-12">
+                    <button (click)="back()" class="btn btn-cadastro pull-left"><i style="margin-right: 20px;" class="fas fa-caret-left"></i>voltar</button>
+                    
+                    <button (click)="next()" *ngIf="currentPage != 3 && currentPage != 4 && currentPage != 8 && currentPage != 6"  class="btn btn-cadastro pull-right">próximo<i style="margin-left: 20px;" class="fas fa-caret-right"></i></button>
+                    <button [disabled]="!formacaoBanda" (click)="currentPage = currentPage + 2" *ngIf="currentPage == 3"  class="btn btn-cadastro pull-right">próximo<i style="margin-left: 20px;" class="fas fa-caret-right"></i></button>
+                    <button [disabled]="this.arrayPdf.length < 1" (click)="currentPage = currentPage + 1" *ngIf="currentPage == 6"  class="btn btn-cadastro pull-right">próximo<i style="margin-left: 20px;" class="fas fa-caret-right"></i></button>
+                    
+                    <button *ngIf="currentPage == 8" routerLink="/cadastro-de-bandas/cadastro-concluido"  class="btn btn-cadastro pull-right">finalizar<i style="margin-left: 20px;" class="fas fa-caret-right"></i></button>
+                    
+                    <button *ngIf="currentPage == 4 && editUser == false" (click)="enviarIntegrante()"  class="btn btn-cadastro pull-right"><span style="margin-right: 20px;">add integrante</span><i class="iconPLus"><span class="plus1"></span><span class="plus2"></span></i></button>
+                    <button *ngIf="currentPage == 4 && editUser == true" (click)="editarIntegrante()"  class="btn btn-cadastro pull-right"><span style="margin-right: 20px;">editar integrante</span><i class="iconPLus"><span class="plus1"></span><span class="plus2"></span></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

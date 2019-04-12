@@ -1,0 +1,28 @@
+<div class="row turn">
+    <div class="col-md-12 text-center input-import ">
+        <div class="form-group show-desktop show-chrome">
+            <label class="sr-only" for="inputFile"></label>
+            <input  type="file" 
+                    class="form-control-file font-weight-bold" 
+                    id="inputFile" 
+                    accept="audio/*"
+                    #inputFile 
+                    (change)="readMp3($event)" 
+                    data-title="Arraste e solte seu arquivo (.MP3) aqui para enviá-lo ou">
+        </div>
+        <i class="fas fa-music"></i>
+        <button type="button" class="btn btn-import" (click)="clickInput()"><b>Pressione para selecionar</b></button>
+    </div>
+    <div class="col-md-12">
+      <p class="text-pdf text-center">{{nameFile}}</p>
+    </div>
+</div>
+
+
+<audio id="music" [src]="srcMusic"></audio>
+<div id="audioplayer" [ngClass]="{'disabled': !playerOn}">
+	<i id="pButton" class="fas fa-play"></i>
+  <div id="timeline">    
+  		  <div id="playhead"></div>
+  </div>
+</div> 

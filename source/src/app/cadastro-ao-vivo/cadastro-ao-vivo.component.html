@@ -1,0 +1,145 @@
+<div class="row align-items-center justify-content-md-center box-login-pai">
+	<div class="col-12" style="padding-left: 5%;">
+		<div class="box-chield text-center">
+			<form class="form-cadastro" [formGroup]="formSubscription" (ngSubmit)="onSubmit()" *ngIf="!cadastroOk">
+				<h2>confirmação de cadastro</h2>
+				<div class="form-group row">
+					<label for="cpf" class="col-sm-1 col-form-label">cpf: </label>
+					<div class="col-sm-11">
+					<input type="text" class="form-control" placeholder="Informe o seu CPF" id="cpf" formControlName="CPF" [(ngModel)]="cpf"
+						[ngClass]="{'invalid-form-field': !formSubscription.controls['CPF'].valid && formSubscription.controls['CPF'].touched}"
+						#cpfString (blur)="cpfBlur(cpfString.value)" maxlength="14">
+					</div>
+        		</div>
+
+				<div class="form-group row">
+					<label for="nome" class="col-sm-2 col-form-label">nome: </label>
+					<div class="col-sm-4" [ngClass]="{'loader-wrapper': loadingCpfData }">
+					<input type="text" class="form-control" id="nome" formControlName="Nome" [(ngModel)]="nome" 
+						[ngClass]="{'invalid-form-field': !formSubscription.controls['Nome'].valid && formSubscription.controls['Nome'].touched}"
+						>
+					<div class="loader-input"></div>
+					</div>
+					<label for="sobrenome" class="col-sm-2 col-form-label">sobrenome: </label>
+					<div class="col-sm-4" [ngClass]="{'loader-wrapper': loadingCpfData }">
+					<input type="text" class="form-control" id="sobrenome" formControlName="Sobrenome" [(ngModel)]="sobrenome" 
+						[ngClass]="{'invalid-form-field': !formSubscription.controls['Sobrenome'].valid && formSubscription.controls['Sobrenome'].touched}">
+						<div class="loader-input"></div>
+					</div>
+					
+				</div>
+        
+
+				<div class="form-group row">
+					<label for="nascimento" class="col-sm-4 col-form-label">data de nascimento: </label>
+					<div class="col-sm-3" [ngClass]="{'loader-wrapper': loadingCpfData }">
+						<input type="text" class="form-control" id="nascimento" formControlName="DataNascimento" [(ngModel)]="nascimento" 
+						[ngClass]="{'invalid-form-field': !formSubscription.controls['DataNascimento'].valid && formSubscription.controls['DataNascimento'].touched}">
+						<div class="loader-input"></div>
+					</div>
+					<label for="celular" class="col-sm-2 col-form-label">celular: </label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="celular" formControlName="Celular" [(ngModel)]="celular"
+						[ngClass]="{'invalid-form-field': !formSubscription.controls['Celular'].valid && formSubscription.controls['Celular'].touched}">
+					</div>					
+				</div>	
+				
+				<div class="form-group row">
+					<label for="estuda" class="col-sm-6 col-form-label">instituição de ensino em que estuda: </label>
+					<div class="col-sm-6">
+					<input type="mail" class="form-control" id="estuda" formControlName="InstitutoEnsino" [(ngModel)]="estuda"
+						[ngClass]="{'invalid-form-field': !formSubscription.controls['InstitutoEnsino'].valid && formSubscription.controls['InstitutoEnsino'].touched}">
+					</div>
+        </div>
+
+				<div class="form-group row">
+					<label for="mail" class="col-sm-2 col-form-label"><i>e-mail</i>: </label>
+					<div class="col-sm-10">
+					<input type="mail" class="form-control" id="mail" formControlName="Email" [(ngModel)]="mail"
+						[ngClass]="{'invalid-form-field': !formSubscription.controls['Email'].valid && formSubscription.controls['Email'].touched}">
+					</div>
+				</div>        
+
+				
+				<div class="form-group row" style="margin-top: 2vh;">
+					<div class="col-sm-6">
+						<span class="btn btn-inscrevase already" (click)="openModalCpf()">já tenho cadastro!					
+						</span>					
+					</div>
+					<!-- <label for="promove" class="col-sm-9 col-form-label"> </label> -->
+					<div class="col-sm-6" class="btn-register-container col-sm-6" style="padding-right: 70px;">
+						<button [ngClass]="{'loader-submit-wrapper': loadingSubmit }" type="submit" class="btn btn-inscrevase">Inscreva-se
+							<svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" baseProfile="tiny" id="Layer_1" x="0px" y="0px" width="45.9px" height="57px" viewBox="0 0 45.9 57" xml:space="preserve">
+								<path class="only-mobile" fill="#000000" d="M0.7,28.5c0-7.9,0-15.7,0-23.6c0-1.6-0.3-3.4,1.6-4.2c1.7-0.8,3.1,0,4.5,1C18.5,9.3,30.3,16.8,42,24.4  c4.6,3,4.6,5.3-0.1,8.3C30.2,40.3,18.5,47.9,6.7,55.5c-1.4,0.9-2.7,1.8-4.5,0.9c-1.6-0.9-1.5-2.5-1.5-4C0.7,44.4,0.7,36.5,0.7,28.5z  "/>
+								<path class="only-desk" fill="#F8CA11" d="M0.7,28.5c0-7.9,0-15.7,0-23.6c0-1.6-0.3-3.4,1.6-4.2c1.7-0.8,3.1,0,4.5,1C18.5,9.3,30.3,16.8,42,24.4  c4.6,3,4.6,5.3-0.1,8.3C30.2,40.3,18.5,47.9,6.7,55.5c-1.4,0.9-2.7,1.8-4.5,0.9c-1.6-0.9-1.5-2.5-1.5-4C0.7,44.4,0.7,36.5,0.7,28.5z  "/>
+							</svg>
+							<div class="loader-input"></div>
+						</button>					
+					</div>					
+				</div>				
+				
+			</form>
+
+
+
+			<div class="cadastro-sucess"  *ngIf="cadastroOk">
+					<h1>Cadastro realizado!</h1>
+					<p>Seu cadastro foi realizado com sucesso, você poderá assistir ao evento ao vivo no dia <span>02 de setembro</span> à partir das <span>15:00h</span>.</p>
+			</div>			
+
+
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div id="myModal" class="modal already fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Já tem cadastro?</h4>
+			</div>
+			<div class="modal-body">
+				<p>Então informe o seu CPF para assistir ao vídeo <b>ao vivo</b>:</p>
+				<form class="form-already" [formGroup]="formAlreadyHasRegister" (ngSubmit)="onSubmitAlready()">					
+					<div class="form-group row">
+						<div class="col-sm-12">
+						<input type="text" class="form-control modal-input" placeholder="Informe o seu CPF" id="cpf" formControlName="CPF" [(ngModel)]="cpfAlready"
+							[ngClass]="{'invalid-form-field': !formAlreadyHasRegister.controls['CPF'].valid && formAlreadyHasRegister.controls['CPF'].touched}"
+							 maxlength="14">
+						</div>
+					</div>			
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-submit-modal">Confirmar</button>						
+					</div>
+					<div class="loader-input" *ngIf="loadingSubmit"></div>
+				</form>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<div id="myModalWait" class="modal wait fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Cadastro realizado</h4>
+			</div>
+			<div class="modal-body">
+				<p>Seu cadastro foi realizado com sucesso! Você poderá assistir ao evento <b>ao vivo</b> no dia 02 de setembro à partir das 15:00h.</p>
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-submit-modal" data-dismiss="modal">Entendi</button>
+			</div>
+		</div>
+	</div>
+</div>

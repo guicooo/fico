@@ -1,0 +1,10 @@
+@import "../../../styles/default";
+@import "../../../styles/componentes-boot/dragdocument.scss";
+
+.form-control:focus {
+    color: white;
+    background-color: transparent;
+}
+.col-form-label {
+    text-align: left;
+}

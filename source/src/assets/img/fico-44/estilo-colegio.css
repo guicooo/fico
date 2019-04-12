@@ -1,0 +1,238 @@
+@charset "UTF-8";
+body{background:#dbe5f1;background:-webkit-linear-gradient(#dbe5f1,#fff);background:-o-linear-gradient(#dbe5f1,#fff);background:-moz-linear-gradient(#dbe5f1,#fff);background:linear-gradient(#dbe5f1,#fff);font-family:'Roboto',Verdana,Arial}
+.padding-0{padding:0!important}
+.cemporcento{width:100%!important}
+.clear{clear:both!important}
+.pull-left{margin-right:4px;padding:1%}
+.center{margin:auto;display:block;text-align:center}
+.fotoesquerda{float:left;margin:8px 8px 8px 0}
+.img-responsive{width:100%!important}
+@media print {
+.no-print,.no-print *{display:none!important}
+}
+@media screen and (min-width: 200px) and (max-width: 1000px) {
+.row{margin-bottom:2%!important}
+.row p{font-size:.98em!important}
+}
+.topo{padding:2% 0!important;background-color:#f5f5f5;border-radius:10px 10px 0 0;border-top:6px solid #fff;border-right:6px solid #fff;border-left:6px solid #fff;margin:10px 0 0!important}
+@media screen and (min-width: 0px) and (max-width: 500px) {
+input#matricula{clear:right!important}
+}
+.topo .btn-primary { margin-right: 10px!important; }
+@media screen and (min-width: 200px) and (max-width: 710px) {
+   .topo  .btn-primary {margin-right: none!important;  }
+}
+@media screen and (min-width: 992px) { .login { text-align: right!important; } }
+@media screen and (min-width: 780px) {.dropdown:hover .dropdown-menu{display:block!important}}
+.navbar{color:#fff!important;margin-top:0;margin-bottom:0; font-size: 1.12em!important;}
+@media screen and (min-width: 991px) and (max-width: 1200px) {.navbar { font-size: 0.90em!important; }}
+
+.navbar a{color:#fff!important}
+.navbar a:hover { color: #fff0b3!important;}
+.navbar,.dropdown-toggle,.dropdown-menu{background-color:#0c4da1!important;border:none!important;border-radius:0!important;color:#fff!important;padding:0}
+.dropdown-menu>li>a{background-color:#0c4da1!important}
+.dropdown-menu a,.dropdown-menu a:hover{color:#fff!important}
+.dropdown-toggle a:hover,.dropdown-toggle a:active,.dropdown-menu a:hover,.dropdown-menu a:active,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:active{background-color:#0a2c58!important}
+.dropdown-menu li{border-top:1px solid #1d569f}
+@media screen and (min-width: 200px) and (max-width: 991px) {
+.navbar-nav li{border-bottom:1px solid #1f7ab3!important}
+.navbar-nav li:last-child{border-bottom:none!important}
+}
+.navbar-toggle{background-color:transparent!important;border:none!important}
+.navbar .icon-bar{background-color:#fff!important}
+.navbar-text,.navbar-text a{color:#fff!important}
+.navbar-text a:hover{color:#ffbb54!important}
+.navbar .fa-caret-right{color:#fc0!important;margin-left:8px!important}
+.navbar-header p{padding:5px}
+@media (max-width: 992px) {
+.navbar-header{float:none}
+.navbar-left,.navbar-right{float:none!important}
+.navbar-toggle{display:block}
+.navbar-collapse.collapse{display:none!important}
+.navbar-nav{float:none!important;margin-top:7.5px}
+.navbar-nav>li{float:none}
+.navbar-nav>li>a{padding-top:10px;padding-bottom:10px}
+.collapse.in{display:block!important}
+.navbar-nav li{position:relative;list-style-type:none!important;    margin:0 0 1px -10px;padding: 4px 10px 4px -10px}
+.navbar-nav li:before{content:"\f0da";font-family:FontAwesome;font-style:normal;font-weight:400;text-decoration:inherit;color:#fc0!important;font-size:14px;position:absolute;top:10px;left:0}
+}
+@media (max-width: 767px) {
+    .navbar-nav li{margin:0 0 1px 10px!important;padding: 4px 10px 4px 0px!important}
+}
+
+.login{padding:0 2%}
+.barra .glyphicon{color:#000}
+.barra a{color:#000}
+input.localizar{border:0;background:none;border-bottom:2px solid #000}
+button.ok-localizar{margin-left:5px!important;background:#000;color:#000;border:none;border-radius:15px}
+.barra .btn-default{background-color:#FC0}
+.nav-tabs a{background-color:#f2f2f2!important}
+.nav-tabs a:hover{color:#fff!important}
+#ctd .nav-tabs a{background-color:#fc0!important;color:#0c4da1!important;font-weight:700!important}
+#ctd .nav-tabs a:hover,#ctd .nav-tabs>li.active>a{background-color:#0c4da1!important;color:#fff!important}
+.item img{width:100%;height:auto}
+.carousel-indicators{visibility:hidden!important}
+.carousel-control.left,.carousel-control.right{background-image:none;margin:0 0 1%}
+.data-placement{font-weight:400!important}
+.home h2{border-bottom:2px solid #0c4fa6;padding-bottom:2px}
+.home,.conteudo{background-color:#fff;padding-top:10px}
+.home img{margin:1%}
+.home p{font-size:.98em}
+
+.sidebar{background-color:#f7f7f7!important;color:#0c4da1}
+.sidebar h3{font-size:1.4em;font-weight:700; background-color: #ededed; padding: 10px; margin-top: 12px;}
+.sidebar li{position:relative;list-style-type:none!important; border-bottom: 1px solid #eeeeee; font-size:1em;margin:0 0 1px -24px;padding: 4px}
+.sidebar li:before{content:"\f0da";font-family:FontAwesome;font-style:normal;font-weight:400;
+text-decoration:inherit;color:inherit!important;font-size:12px;margin-left:1px;padding-right:1em;
+position:absolute;top:5px;left:-15px}
+.sidebar li:last-child { border-bottom: none; }
+
+.acontece{padding:0 1% 1%}
+.acontece h3{border-bottom:2px solid #000;color:#000;font-weight:700;padding-bottom:2%;margin-left:10px}
+.acontece li{color:#000!important;list-style:none;margin:0 0 4px -30px;padding:0}
+.acontece a{color:#000}
+.destaques{background-color:#ffebdd;border-right:8px solid #fff!important}
+.destaques h3{color:#f60;font-size:1.5em;font-weight:700}
+ul.img-list{list-style-type:none;margin:10px 0 0;padding:0;text-align:center}
+ul.img-list li{display:inline-block;height:100px;position:relative;width:150px;margin-bottom:15px}
+span.text-content span{display:table-cell;text-align:center;vertical-align:middle}
+ul.img-list li:hover span.text-content{opacity:1}
+span.text-content{background:rgba(1,69,137,0.8);color:#fff;cursor:pointer;display:table;font-size:.86em;font-weight:700;height:102px;left:0;padding:6px!important;position:absolute;top:0;width:150px;opacity:0;-webkit-transition:opacity 500ms;-moz-transition:opacity 500ms;-o-transition:opacity 500ms;transition:opacity 500ms}
+
+.efemerides{background-color:#fff7ce!important;margin-bottom:2%;border-right:8px solid #fff!important}
+.data-efemerides{background-color:#fc0;font-size:1.8em;font-weight:700;padding:4px}
+.efemerides p{padding:0;margin:0}
+.efemerides h4{color:#0c4da1;font-size:1em;font-weight:700;padding:4px 0;margin:0}
+@media screen and (min-width: 0px) and (max-width: 600px) {
+.efemerides{margin-top:2%}
+}
+.conteudo-efemerides .fa-calendar-check-o { opacity: 0.15; margin-right: 6px; }
+.conteudo-efemerides .data-pagina { background-color: #f6faff; border-bottom: none!important; box-shadow: 3px 3px #e0e8f1!important; padding: 14px 10px!important; font-size: 1.8em;}
+/*Listas*/
+.conteudo-efemerides .lista-comseta li{position:relative;list-style-type:none!important}
+.conteudo-efemerides .lista-comseta li:before{content:"\f0da";font-family:FontAwesome;font-style:normal;font-weight:400;text-decoration:inherit;color:inherit!important;font-size:14px;margin-left:-10px;padding-right:1em;position:absolute;top:-1px;left:-15px}
+.conteudo-efemerides .lista-comseta li ul li:before{content:"\f0da";font-family:FontAwesome;font-style:normal;font-weight:400;text-decoration:inherit;color:inherit;font-size:15px;margin-left:-15px;padding-right:1em;position:absolute;top:2px;left:0}
+.conteudo-efemerides .lista-comseta li ul li ul li:before{content:"\f0da";font-family:FontAwesome;font-style:normal;font-weight:400;text-decoration:inherit;color:inherit;font-size:14px;margin-left:-15px;padding-right:1em;position:absolute;top:3px;left:0}
+
+.conteudo-efemerides h1{border-bottom:2px solid #0c4da1!important;color:#0c4da1!important;font-size:2.4em!important;font-weight:900!important}
+.conteudo-efemerides h2{color:#0d56b3!important;font-weight:700!important;font-size:1.9em!important}
+.conteudo-efemerides h3{color:#0f5ec6!important;font-weight:700!important;font-size:1.8em!important}
+.conteudo-efemerides h4{color:#1067d8!important;font-weight:700!important;font-size:1.6em!important; margin: 0!important; padding: 0!important;}
+.conteudo-efemerides h5{color:#407AD9!important;font-size:1.4em!important; margin-top: 20px!important;}
+.conteudo-efemerides h6{color:#afafaf!important;font-size:1.2em!important}
+.conteudo-efemerides  ul { color: #646464; margin-top: 20px!important; }
+
+.destaques-texto a{color:#000!important}
+.destaques-texto{padding-left:0}
+.saibamais{padding:0 1% 1% 0}
+.saibamais h3{color:#c00;border-bottom:1px solid #c00;font-weight:700;font-size:1.4em;padding-bottom:1%;margin-left:10px}
+.saibamais li{color:#0c4da1;list-style:none;margin:0 0 4px -30px;padding:0}
+.saibamais a{color:#c00}
+
+.galerias{background-color: #f7f7f7; border:2px solid #f7f7f7;border-radius:10px;margin:3% 0;padding:4%}
+.galerias h3{font-size:1.3em;font-weight:700;margin: -1px 0 5px 0; color: #959595;}
+.galerias img{padding:3%}
+
+.breadcrumb{color:#9e9e9e!important;font-size:.85em;padding:5px;margin:10px 0}
+
+h1{color:#0c4da1}
+h2{color:#0d56b3;font-size:1.8em;font-weight:700}
+h3{color:#0f5ec6}
+h4{color:#1067d8;margin:10px 0;padding-bottom:10px}
+h5{color:#407AD9;}
+
+/*
+h1{border-bottom:2px solid #0c4da1!important;color:#0c4da1!important;font-size:2.4em!important;font-weight:900!important}
+h2{color:#0d56b3!important;font-weight:700!important;font-size:1.9em!important}
+h3{color:#0f5ec6!important;font-weight:700!important;font-size:1.8em!important}
+h4{color:#1067d8!important;font-weight:700!important;font-size:1.6em!important; margin: 0!important; padding: 0!important;}
+h5{color:#407AD9!important;font-size:1.4em!important; margin-top: 20px!important;}
+h6{color:#afafaf!important;font-size:1.2em!important}
+*/
+/* .tab-content h5{color:#fc0!important} */
+
+table{width:100%}
+table th{background-color:#265ca2;border:1px solid #2a5285;color:#fff!important;padding:5px}
+table td{border:1px solid #9e9e9e;padding:4px}
+.alert-danger h2{border-bottom:2px solid #a60000!important;color:#a60000!important}
+.btn-proposta-pedagogica{color:#0c0e53!important;font-weight:700;background-color:#f2c806}
+.btn-proposta-pedagogica:hover{background-color:#eeb300}
+.btn-formulario-interesse{color:#fff!important;font-weight:700;background-color:#128c53}
+.btn-formulario-interesse:hover{background-color:#0a7342}
+.btn-resolucao-desafio{color:#fff!important;font-weight:700;background-color:#f3973e!important}
+.btn-resolucao-desafio:hover{background-color:#db720c!important}
+.conteudo h2{border-bottom:2px solid #0c4fa6;color:#0c4fa6;font-size:1.8em;font-weight:700;padding-bottom:4px}
+.acontece-interna{padding:0 2% 1% 0}
+.acontece-interna h3{border-bottom:2px solid #0c4ca0;color:#0c4ca0;font-size:1.4em;font-weight:700;padding-bottom:2%}
+.acontece-interna li{color:#0c4ca0;list-style:none;margin:0 0 6px -40px;padding:0; border-bottom: 1px solid #eee;}
+.acontece-interna li:last-child { border-bottom: none; }
+.acontece-interna a{color:#0c4ca0}
+.eradoradio img{border-radius:6px;margin-bottom:5px!important}
+.eradoradio strong{font-size:1.28em!important;font-weight:900!important; }
+.eradoradio-col{height:275px;margin-bottom:22px!important;font-size:.9em!important;line-height:16px!important}
+#ctd li.active{font-weight:900!important}
+#ctd h3,#ctd h4,#ctd h5,.conteudo h3,.conteudo h4{clear:both!important}
+#ctd h3{background-color:#e5e5e5;font-size:1.5em!important;padding:5px}
+#ctd h4{font-weight:700!important;font-size:1.4em!important}
+#ctd h5{font-size:1.2em;font-weight:700!important;color:#415670}
+#galeria,#galeria2{padding:0;margin:0 4px;display:block!important;width:100%}
+.bico{margin:0 2.5em!important}
+#galeria .img,#galeria2 .img{float:left;margin:.4em}
+#galeria .fotos{width:auto;height:auto}
+#galeria .atualidades,#galeria2 .atualidades2{font-size:.85em!important;width:180px;height:200px}
+#galeria .videoslaboratorios{font-size:.85em!important;width:180px;height:240px}
+.ativcomplementares{float:left;padding:4px;margin:5px 2px;width:180px;height:200px;font-size:.88em;line-height:14px}
+.ativcomplementares img{width:180px;float:left;margin:0 8.5px 2px 0}
+.pagina-ativcomplementares h3{font-size:14px!important}
+#paginacao a{border:1px solid #0B4C89;border-radius:5px;padding:6px;background:#E2E9F3;clear:both!important}
+#paginacao .contador{margin:10px}
+#paginacao{color:#0B4C89;margin-top:10px;clear:both!important;text-align:center;padding:20px}
+#videos_educar{padding:0!important;margin:0 4px!important;display:block!important;width:100%!important}
+#videos_educar .videos_relacionados{font-size:.85em!important;width:180px!important;height:200px!important}
+footer,.footer{background-color:#eaeaea;border-radius:0 0 10px 10px;color:#000;font-size:.9em;margin-bottom:1%;padding-top:2%!important}
+footer a,footer a:visited{color:#000;text-decoration:underline}
+footer a:hover{text-decoration:none}
+.img-overlay{position:fixed;top:40%;right:8%;float:right}
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+.img-overlay{display:none}
+}
+.resultado-busca h3 a{text-decoration:underline;color:#0e5abe}
+
+/*Paginas inicias de cada segmento - Destaques */
+.destaques-iniciais .media h5 { background-color: #f8f8f8; color: #0c4fa6!important; font-weight: 900!important; font-size: 1.22em!important; margin-bottom: 0!important; padding: 2px 2px 2px 4px;}
+.destaques-iniciais .media p { font-size: 0.97em!important; padding-left: 4px; line-height: 1.0em!important}
+@media screen and (min-width: 0px) and (max-width: 990px) {
+.destaques-iniciais .row { margin: 0!important; }
+}
+
+.orientacao-pedagogica .fa-caret-down { color: #ffcc00!important;  }
+
+/*Videos com textos */
+.video-imagem img { width: 100%!important;  padding: 0!important;}
+.video-texto { color: #000!important; background-color: #dfe4ea; padding: 10px; }
+
+/*Pagina Lab de Redacao*/
+.lista-labredacao li {
+ background-color: #f1f1f1;
+ padding: 4px;
+ margin: 2px
+}
+.videoslaboratorios {
+ background-color: #f1f1f1;
+ padding: 5px;
+ height: auto!important;
+}
+@media screen and (min-width: 400px) {
+.videoslaboratorios p {
+ min-height: 70px!important;
+}
+}
+.videoslaboratorios .btn {
+ background-color: #3ead68!important;
+ border-color: #3ead68!important;
+ padding: 5px;
+}
+.videoslaboratorios .btn:hover {
+ background-color: #277e47!important;
+ border-color: #277e47!important;
+}

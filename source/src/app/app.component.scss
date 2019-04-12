@@ -1,0 +1,92 @@
+@import "../styles/default";
+
+.bg-login {  
+    background-image:url(assets/img/fico-bg-1.jpg);
+    background-color: black;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.mask-black {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: .4;
+}
+
+
+
+
+
+
+
+// // BUTTONS
+
+:host /deep/ .btn-animated {
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+:host /deep/ .btn-animated span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  color: $yellow-fico;
+  transition: 0.5s;
+}
+
+:host /deep/ .btn-animated span:after {
+  content: '\00bb';    
+  color: black;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+:host /deep/ .btn-animated:hover span {
+  padding-right: 25px;
+  color: black;
+}
+
+:host /deep/ .btn-animated:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+// HELPERS
+
+
+:host /deep/ .only-mobile {
+  display: none;
+  @include maxWidth(767) {
+      display: block;
+  }    
+}
+
+:host /deep/ .only-desk {
+  display: block;
+  @include maxWidth(767) {
+      display: none;
+  }    
+}
+
+// SCROLL BAR
+.img-charge {
+  position: absolute;
+  top: -500px;
+  width: 1px;
+  opacity: 0;
+}
